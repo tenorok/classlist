@@ -8,7 +8,8 @@
   ],
   "files": [
     "typings/tsd.d.ts",
-    "classList.ts",
+    "ClassListInterface.ts",
+    "ClassList.ts",
     "test/add.ts"
   ]
 }

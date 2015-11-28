@@ -17,11 +17,28 @@ module.exports = function(grunt) {
         },
         clean: {
             main: [
+                'docs',
                 'test/*.js',
                 'test/*.js.map',
-                'classList.js',
-                'classList.js.map'
+                'ClassList.js',
+                'ClassList.js.map',
+                'ClassListInterface.js',
+                'ClassListInterface.js.map'
             ]
+        },
+        typedoc: {
+            main: {
+                options: {
+                    module: 'commonjs',
+                    target: 'es5',
+                    out: 'docs/',
+                    name: 'Abstract Element.classList realization for any environment.'
+                },
+                src: [
+                    'ClassList.ts',
+                    'ClassListInterface.ts'
+                ]
+            }
         }
     });
 
