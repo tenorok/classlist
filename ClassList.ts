@@ -14,7 +14,17 @@ export default class ClassList extends Array implements ClassListInterface {
         }
     }
 
-    remove(...classNames: Array<string>): void {}
+    remove(...classNames: Array<string>): void {
+        for(let i = 0; i < classNames.length; i++) {
+            let className = classNames[i];
+            ClassList._isClassNameValid(className);
+
+            let index = this.indexOf(className);
+            if(~index) {
+                this.splice(index, 1);
+            }
+        }
+    }
 
     contains(className: string): boolean {
         return true;
