@@ -2,6 +2,8 @@
   "name": "ab-classlist",
   "description": "Abstract `Element.classList` realization for any environment.",
   "version": "1.0.0",
+  "main": "ClassList.js",
+  "typings": "ClassList.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/tenorok/classlist.git"

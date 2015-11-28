@@ -17,14 +17,17 @@ module.exports = function(grunt) {
         },
         clean: {
             main: [
-                'docs',
-                'test/*.js',
-                'test/*.js.map',
-                'ClassList.js',
-                'ClassList.js.map',
-                'ClassListInterface.js',
-                'ClassListInterface.js.map'
-            ]
+                '.tscache',
+                'docs'
+            ].concat([
+                'test/*',
+                'ClassList',
+                'ClassListInterface'
+            ].reduce(function(list, item) {
+                return list.concat(['.js', '.js.map', '.d.ts'].map(function(ext) {
+                    return item + ext;
+                }));
+            }, []))
         },
         typedoc: {
             main: {

@@ -5,3 +5,5 @@ docs
 *.js
 !Gruntfile.js
 *.js.map
+*.d.ts
+!ClassList.d.ts
