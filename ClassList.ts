@@ -4,8 +4,13 @@ export default class ClassList extends Array implements ClassListInterface {
     length: number;
 
     add(...classNames: Array<string>): void {
-        if(ClassList._isClassNamesValid(...classNames)) {
-            this.push(...classNames);
+        for(let i = 0; i < classNames.length; i++) {
+            let className = classNames[i];
+            ClassList._isClassNameValid(className);
+
+            if(!~this.indexOf(className)) {
+                this.push(className);
+            }
         }
     }
 
@@ -27,12 +32,11 @@ export default class ClassList extends Array implements ClassListInterface {
         return this.join(' ');
     }
 
-    private static _isClassNamesValid(...classNames: Array<string>): boolean {
-        return classNames.every(name => {
-            if(~name.indexOf(' ')) {
-                throw new InvalidClassNameError(name);
-            } else return true;
-        });
+    private static _isClassNameValid(className: string): boolean {
+        if(~className.indexOf(' ')) {
+            throw new InvalidClassNameError(className);
+        }
+        return true;
     }
 }
 

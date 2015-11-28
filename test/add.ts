@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import ClassList from '../classList';
 
-describe('classList.add', () => {
+describe('Method add.', () => {
     let classList;
 
     beforeEach(() => {
@@ -18,19 +18,26 @@ describe('classList.add', () => {
         assert.equal(classList.toString(), '');
     });
 
-    it('should add one classname', () => {
+    it('should add one class name', () => {
         classList.add('a');
         assert.equal(classList.length, 1);
         assert.equal(classList.toString(), 'a');
     });
 
-    it('should add several classnames', () => {
-        classList.add('a', 'b', 'c');
+    it('should not add an existing class name', () => {
+        classList.add('a');
+        classList.add('a');
+        assert.equal(classList.length, 1);
+        assert.equal(classList.toString(), 'a');
+    });
+
+    it('should add several class names', () => {
+        classList.add('a', 'b', 'b', 'c');
         assert.equal(classList.length, 3);
         assert.equal(classList.toString(), 'a b c');
     });
 
-    it('should throw error when classname contains whitespace', () => {
+    it('should throw error when class name contains whitespace', () => {
         assert.throws(
             function() { classList.add('a b'); },
             'Class name "a b" contains space character, which is not valid.'
