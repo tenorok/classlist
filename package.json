@@ -1,0 +1,26 @@
+{
+  "name": "ab-classlist",
+  "description": "Abstract `Element.classList` realization for any environment.",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenorok/classlist.git"
+  },
+  "author": {
+    "name": "Artem Kurbatov",
+    "email": "mail@tenorok.ru",
+    "homepage": "http://tenorok.ru"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-ts": "^5.2.0",
+    "load-grunt-tasks": "^3.3.0",
+    "mocha": "^2.3.4",
+    "tsd": "^0.6.5"
+  }
+}
