@@ -11,6 +11,7 @@
     "typings/tsd.d.ts",
     "ClassListInterface.ts",
     "ClassList.ts",
+    "test/new.ts",
     "test/add.ts",
     "test/remove.ts"
   ]

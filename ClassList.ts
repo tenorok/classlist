@@ -1,7 +1,12 @@
 import { ClassListInterface } from './ClassListInterface';
 
-export default class ClassList extends Array implements ClassListInterface {
+export default class ClassList extends Array<string> implements ClassListInterface {
     length: number;
+
+    constructor(...classNames: Array<string>) {
+        super();
+        this.push(...classNames);
+    }
 
     add(...classNames: Array<string>): void {
         for(let i = 0; i < classNames.length; i++) {
