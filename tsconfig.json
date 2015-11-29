@@ -13,6 +13,7 @@
     "ClassList.ts",
     "test/new.ts",
     "test/add.ts",
-    "test/remove.ts"
+    "test/remove.ts",
+    "test/contains.ts"
   ]
 }

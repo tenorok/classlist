@@ -12,10 +12,9 @@ export default class ClassList extends Array<string> implements ClassListInterfa
         for(let i = 0; i < classNames.length; i++) {
             let className = classNames[i];
             ClassList._isClassNameValid(className);
+            if(this.contains(className)) continue;
 
-            if(!~this.indexOf(className)) {
-                this.push(className);
-            }
+            this.push(className);
         }
     }
 
@@ -32,7 +31,11 @@ export default class ClassList extends Array<string> implements ClassListInterfa
     }
 
     contains(className: string): boolean {
-        return true;
+        if(typeof className === 'undefined') {
+            throw new TypeError('1 argument required, but only 0 present.')
+        }
+
+        return !!~this.indexOf(className);
     }
 
     toggle(className: string, force?: boolean): boolean {
