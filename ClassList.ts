@@ -31,9 +31,7 @@ export default class ClassList extends Array<string> implements ClassListInterfa
     }
 
     contains(className: string): boolean {
-        if(typeof className === 'undefined') {
-            throw new TypeError('1 argument required, but only 0 present.')
-        }
+        ClassList._isRequiredParamExists(className);
 
         return !!~this.indexOf(className);
     }
@@ -43,7 +41,9 @@ export default class ClassList extends Array<string> implements ClassListInterfa
     }
 
     item(index: number): string {
-        return '';
+        ClassList._isRequiredParamExists(index);
+
+        return this[index] || null;
     }
 
     toString(): string {
@@ -53,6 +53,13 @@ export default class ClassList extends Array<string> implements ClassListInterfa
     private static _isClassNameValid(className: string): boolean {
         if(~className.indexOf(' ')) {
             throw new InvalidClassNameError(className);
+        }
+        return true;
+    }
+
+    private static _isRequiredParamExists(param: any): boolean {
+        if(typeof param === 'undefined') {
+            throw new TypeError('1 argument required, but only 0 present.');
         }
         return true;
     }

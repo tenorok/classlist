@@ -14,6 +14,7 @@
     "test/new.ts",
     "test/add.ts",
     "test/remove.ts",
-    "test/contains.ts"
+    "test/contains.ts",
+    "test/item.ts"
   ]
 }

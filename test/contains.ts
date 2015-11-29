@@ -20,7 +20,7 @@ describe('Method contains.', () => {
         assert.isTrue(classList.contains('a'));
     });
 
-    it('should return `false` for unavailable class name', () => {
+    it('should return `false` for the unavailable class name', () => {
         assert.isFalse(classList.contains('b'));
     });
 });
