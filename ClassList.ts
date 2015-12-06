@@ -37,6 +37,19 @@ export default class ClassList extends Array<string> implements ClassListInterfa
     }
 
     toggle(className: string, force?: boolean): boolean {
+        ClassList._isRequiredParamExists(className);
+
+        if(typeof force !== 'undefined') {
+            force ? this.add(className) : this.remove(className);
+            return force;
+        }
+
+        if(this.contains(className)) {
+            this.remove(className);
+            return false;
+        }
+
+        this.add(className);
         return true;
     }
 
