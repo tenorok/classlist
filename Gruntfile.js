@@ -22,7 +22,8 @@ module.exports = function(grunt) {
             ].concat([
                 'test/*',
                 'ClassList',
-                'ClassListInterface'
+                'ClassListInterface',
+                'CNClassList'
             ].reduce(function(list, item) {
                 return list.concat(['.js', '.js.map', '.d.ts'].map(function(ext) {
                     return item + ext;
@@ -39,7 +40,8 @@ module.exports = function(grunt) {
                 },
                 src: [
                     'ClassList.ts',
-                    'ClassListInterface.ts'
+                    'ClassListInterface.ts',
+                    'CNClassList.ts'
                 ]
             }
         }

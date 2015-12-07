@@ -11,11 +11,13 @@
     "typings/tsd.d.ts",
     "ClassListInterface.ts",
     "ClassList.ts",
+    "CNClassList.ts",
     "test/new.ts",
     "test/add.ts",
     "test/remove.ts",
     "test/contains.ts",
     "test/toggle.ts",
-    "test/item.ts"
+    "test/item.ts",
+    "test/cnclasslist.ts"
   ]
 }
