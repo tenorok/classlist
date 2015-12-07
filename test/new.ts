@@ -3,16 +3,16 @@ import ClassList from '../classList';
 
 describe('Creating instance.', () => {
     it('should creat empty instance', () => {
-        assert.equal(new ClassList().toString(), '');
+        assert.strictEqual(new ClassList().toString(), '');
     });
 
     it('should create list with one element', () => {
         let classList = new ClassList('a');
-        assert.equal(classList.toString(), 'a');
+        assert.strictEqual(classList.toString(), 'a');
     });
 
     it('should create list with several elements', () => {
         let classList = new ClassList('a', 'b');
-        assert.equal(classList.toString(), 'a b');
+        assert.strictEqual(classList.toString(), 'a b');
     });
 });

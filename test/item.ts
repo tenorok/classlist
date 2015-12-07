@@ -17,11 +17,11 @@ describe('Method item.', () => {
     });
 
     it('should return first class name', () => {
-        assert.equal(classList.item(0), 'a');
+        assert.strictEqual(classList.item(0), 'a');
     });
 
     it('should return second class name', () => {
-        assert.equal(classList.item(1), 'b');
+        assert.strictEqual(classList.item(1), 'b');
     });
 
     it('should return `null` for the unavailable index', () => {
