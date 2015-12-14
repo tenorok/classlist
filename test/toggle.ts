@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import ClassList from '../classList';
+import ClassList from '../ClassList';
 
 describe('Method toggle.', () => {
     let classList;
