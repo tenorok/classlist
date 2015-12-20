@@ -1,8 +1,14 @@
 # Abstract `classList` implementation for any environment
 
+[![npm](https://img.shields.io/npm/v/cnclasslist.svg)](https://www.npmjs.com/package/cnclasslist)
+[![Build Status](https://img.shields.io/travis/tenorok/cnclasslist/master.svg)](https://travis-ci.org/tenorok/cnclasslist)
+[![Coverage Status](https://img.shields.io/coveralls/tenorok/cnclasslist/master.svg)](https://coveralls.io/r/tenorok/cnclasslist)
+
 In this project realized two classes:
-1. [`ClassList`](#ClassList) – it's full implementation methods of [browser classList property](http://www.w3schools.com/jsref/prop_element_classlist.asp), except that this class is abstract and not tied to DOM. You can just add and remove classes in list, then get result string.
-2. [`CNClassList`](#CNClassList) – is the inheritor of previous class. The main goal of this class is synchronize classes list with `className` property of the same object. Intended for using with NativeScript.
+
+1. [`ClassList`](#classlist) – it's full implementation methods of [browser classList property](http://www.w3schools.com/jsref/prop_element_classlist.asp), except that this class is abstract and not tied to DOM. You can just add and remove classes in list, then get result string.
+
+2. [`CNClassList`](#cnclasslist) – is the inheritor of previous class. The main goal of this class is synchronize classes list with `className` property of the same object. Intended for using with [NativeScript](https://www.nativescript.org) and [TypeScript](http://www.typescriptlang.org) if you wish.
 
 ## Installation
 
@@ -12,7 +18,7 @@ npm install cnclasslist
 
 ### Include
 
-You can use [`ClassList`](#ClassList) and [`CNClassList`](#CNClassList) both in browser and in Node.js as CommonJS-module:
+You can use [`ClassList`](#classlist) and [`CNClassList`](#cnclasslist) both in browser and in Node.js as CommonJS-module:
 
 ```js
 const ClassList = require('cnclasslist').ClassList;
@@ -101,6 +107,7 @@ Example:
 
 ```js
 let cl = new ClassList('first', 'second');
+cl.contains('first'); // → true
 cl.contains('third'); // → false
 ```
 
@@ -141,6 +148,7 @@ Example:
 ```js
 let cl = new ClassList('first', 'second');
 cl.item(1); // → 'second'
+cl.item(2); // → null
 ```
 
 ### Property `length`
@@ -160,7 +168,7 @@ cl.length; // → 2
 
 ## CNClassList
 
-API of this class exactly as [`ClassList`](#ClassList), but as addition he do synchronizing list of classes with property `className` of the same object.
+API of this class exactly as [`ClassList`](#classlist), but as addition he do synchronizing list of classes with property `className` of the same object.
 
 ### Constructor
 
@@ -180,7 +188,7 @@ let node = { className: '' };
 let cl = new CNClassList(node);
 ```
 
-### Combined example
+### Example of synchronization
 
 ```js
 let node = { className: 'first second' };
