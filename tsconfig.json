@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "target": "es5",
+    "module": "commonjs"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "files": [
+    "typings/tsd.d.ts",
+    "main.ts",
+    "ClassListInterface.ts",
+    "ClassList.ts",
+    "CNClassList.ts",
+    "test/new.ts",
+    "test/add.ts",
+    "test/remove.ts",
+    "test/contains.ts",
+    "test/toggle.ts",
+    "test/item.ts",
+    "test/cnclasslist.ts"
+  ]
+}

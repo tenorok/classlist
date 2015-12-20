@@ -1,0 +1,34 @@
+{
+  "name": "cnclasslist",
+  "description": "Abstract `Element.classList` realization for any environment.",
+  "version": "1.0.0",
+  "main": "main.js",
+  "typings": "main.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenorok/classlist.git"
+  },
+  "author": {
+    "name": "Artem Kurbatov",
+    "email": "mail@tenorok.ru",
+    "homepage": "http://tenorok.ru"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-coveralls": "^1.0.0",
+    "grunt-mocha-istanbul": "^3.0.1",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-shell": "^1.1.2",
+    "grunt-ts": "^5.2.0",
+    "grunt-typedoc": "^0.2.3",
+    "istanbul": "^0.4.1",
+    "load-grunt-tasks": "^3.3.0",
+    "mocha": "^2.3.4",
+    "remap-istanbul": "^0.5.1",
+    "tsd": "^0.6.5"
+  }
+}
