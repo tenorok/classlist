@@ -1,8 +1,8 @@
 # Abstract `classList` implementation for any environment
 
 In this project realized two classes:
-1. `ClassList` – it's full implementation methods of [browser classList property](http://www.w3schools.com/jsref/prop_element_classlist.asp), except that this class is abstract and not tied to DOM. You can just add and remove classes in list, then get result string.
-2. `CNClassList` – is the inheritor of previous class. The main goal of this class is synchronize classes list with `className` property of the same object. Intended for using with NativeScript.
+1. [`ClassList`](#ClassList) – it's full implementation methods of [browser classList property](http://www.w3schools.com/jsref/prop_element_classlist.asp), except that this class is abstract and not tied to DOM. You can just add and remove classes in list, then get result string.
+2. [`CNClassList`](#CNClassList) – is the inheritor of previous class. The main goal of this class is synchronize classes list with `className` property of the same object. Intended for using with NativeScript.
 
 ## Installation
 
@@ -12,7 +12,7 @@ npm install cnclasslist
 
 ### Include
 
-You can use `ClassList` and `CNClassList` both in browser and in Node.js as CommonJS-module:
+You can use [`ClassList`](#ClassList) and [`CNClassList`](#CNClassList) both in browser and in Node.js as CommonJS-module:
 
 ```js
 const ClassList = require('cnclasslist').ClassList;
@@ -68,7 +68,7 @@ add(...classNames: Array<string>): void;
 Example:
 
 ```js
-var cl = new ClassList();
+let cl = new ClassList();
 cl.add('first', 'second');
 cl.toString(); // → 'first second'
 ```
@@ -84,7 +84,7 @@ remove(...classNames: Array<string>): void;
 Example:
 
 ```js
-var cl = new ClassList('first', 'second', 'third');
+let cl = new ClassList('first', 'second', 'third');
 cl.remove('first', 'third');
 cl.toString(); // → 'second'
 ```
@@ -100,7 +100,7 @@ contains(className: string): boolean;
 Example:
 
 ```js
-var cl = new ClassList('first', 'second');
+let cl = new ClassList('first', 'second');
 cl.contains('third'); // → false
 ```
 
@@ -116,7 +116,7 @@ toggle(className: string, force?: boolean): boolean;
 Example:
 
 ```js
-var cl = new ClassList('first');
+let cl = new ClassList('first');
 cl.toggle('second');
 cl.toString(); // → 'first second'
 cl.toggle('second');
@@ -139,7 +139,7 @@ item(index: number): string;
 Example:
 
 ```js
-var cl = new ClassList('first', 'second');
+let cl = new ClassList('first', 'second');
 cl.item(1); // → 'second'
 ```
 
@@ -154,6 +154,40 @@ length: number;
 Example:
 
 ```js
-var cl = new ClassList('first', 'second');
+let cl = new ClassList('first', 'second');
 cl.length; // → 2
+```
+
+## CNClassList
+
+API of this class exactly as [`ClassList`](#ClassList), but as addition he do synchronizing list of classes with property `className` of the same object.
+
+### Constructor
+
+You should pass object when creating instance of CNClassList.
+
+```js
+interface NodeInterface {
+    className?: string;
+}
+new(node: NodeInterface): CNClassList;
+```
+
+Example:
+
+```js
+let node = { className: '' };
+let cl = new CNClassList(node);
+```
+
+### Combined example
+
+```js
+let node = { className: 'first second' };
+let cl = new CNClassList(node);
+cl.toString(); // → 'first second'
+cl.add('third');
+node.className; // → 'first second third'
+node.className = 'fourth';
+cl.toString(); // → 'fourth'
 ```
