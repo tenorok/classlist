@@ -9,6 +9,7 @@
   ],
   "files": [
     "typings/tsd.d.ts",
+    "main.ts",
     "ClassListInterface.ts",
     "ClassList.ts",
     "CNClassList.ts",

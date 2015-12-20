@@ -47,6 +47,7 @@ module.exports = function(grunt) {
                 'docs'
             ].concat([
                 'test/*',
+                'main',
                 'ClassList',
                 'ClassListInterface',
                 'CNClassList'
