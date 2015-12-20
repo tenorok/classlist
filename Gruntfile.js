@@ -40,6 +40,9 @@ module.exports = function(grunt) {
                 command: './node_modules/.bin/istanbul report lcov text --include coverage/coverage.json'
             }
         },
+        coveralls: {
+            src: 'coverage/lcov.info'
+        },
         clean: {
             main: [
                 '.tscache',
